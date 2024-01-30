@@ -23,6 +23,7 @@ func main() {
 		return
 	}
 
+	// https://stackoverflow.com/a/21108084
 	result, err := db.Exec(`insert into tb_menu(Name,ParentId,Icon,Path) values ('2.3', 2, null, null)`)
 	if err != nil {
 		fmt.Printf("Exec failed, err:%v\n", err)
