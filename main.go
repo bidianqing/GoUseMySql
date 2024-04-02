@@ -59,10 +59,10 @@ func main() {
 	insertSql.WriteString("insert into tb_user(Name) values")
 	args := []interface{}{}
 	for index, row := range insertRows {
-		if index == len(insertRows)-1 {
-			insertSql.WriteString("(?)")
-		} else {
+		if index != len(insertRows)-1 {
 			insertSql.WriteString("(?),")
+		} else {
+			insertSql.WriteString("(?)")
 		}
 		args = append(args, row.Name)
 	}
